@@ -45,8 +45,9 @@
 // Brief	Name of the LED
 // Details	Each board has a LED but connected to a different pin
 //
-const uint8_t myLED = 12;
+const int redLedPin = 12;
 
+const int greenLedPin = 11;
 
 //
 // Brief	Setup
@@ -55,7 +56,9 @@ const uint8_t myLED = 12;
 // Add setup code 
 void setup() {
 
-    pinMode(myLED, OUTPUT);
+    pinMode(redLedPin, OUTPUT);
+    
+    pinMode(greenLedPin, OUTPUT);
 }
 
 //
@@ -64,8 +67,19 @@ void setup() {
 //
 // Add loop code 
 void loop() {
-    digitalWrite(myLED, HIGH);
+    
+    digitalWrite(greenLedPin, LOW);
+    
+    digitalWrite(redLedPin, HIGH);
+    
     delay(2000);
-    digitalWrite(myLED, LOW);
-    delay(100);
+    
+    digitalWrite(redLedPin, LOW);
+    
+    digitalWrite(greenLedPin, HIGH);
+    
+    delay(5000);
+    
 }
+
+
